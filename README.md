@@ -8,4 +8,4 @@
 - PHP
 - NodeJS
 - RabbitQM
-- Banco de dados Postgres
+- Banco de dados Mysql
