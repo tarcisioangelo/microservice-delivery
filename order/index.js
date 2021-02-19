@@ -1,8 +1,10 @@
 require("dotenv-safe").config()
+
 const express = require('express')
 const bodyParser = require('body-parser')
-const http = require('http')
+
 const app = express()
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -10,6 +12,5 @@ app.use(bodyParser.json())
 const routes = require('./routes')
 app.use(routes)
 
-const server = http.createServer(app)
 
-server.listen(4000, () => console.log("Server on-line"))
+app.listen(4000, () => console.log("Server on-line"))
