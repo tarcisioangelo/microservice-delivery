@@ -1,6 +1,6 @@
 const express = require('express')
 const routes = express.Router()
-const queue = require('../queue')
+const queue = require('../rabbitmq')
 const EmptyToNull = require('../middlewares/EmptyToNull')
 
 // Routers

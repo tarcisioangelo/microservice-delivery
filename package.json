@@ -1,0 +1,17 @@
+{
+    "name": "delivery-team",
+    "version": "1.0.0",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "dev:on": "cd docker && docker-compose up -d",
+      "dev:off": "cd docker && docker-compose down",
+      "order": "cd services/order && yarn dev",
+      "payment": "cd services/payment && yarn dev",
+      "start": "concurrently --kill-others-on-fail 'yarn order' 'yarn payment'"
+    },
+    "dependencies": {
+      "concurrently": "5.1.0"
+    }
+  }
+  

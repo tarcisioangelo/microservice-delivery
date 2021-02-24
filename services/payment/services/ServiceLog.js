@@ -6,7 +6,7 @@ class ServiceLog {
         try {
             const message = {
                 type: 'error',
-                service: 'order',
+                service: process.env.SERVICE,
                 controller,
                 action,
                 msg
@@ -24,7 +24,7 @@ class ServiceLog {
         try {
             const message = {
                 type: 'error',
-                service: 'order',
+                service: process.env.SERVICE,
                 controller,
                 action,
                 msg
@@ -42,7 +42,7 @@ class ServiceLog {
         try {
             const message = {
                 type: 'warning',
-                service: 'order',
+                service: process.env.SERVICE,
                 controller,
                 action,
                 msg
