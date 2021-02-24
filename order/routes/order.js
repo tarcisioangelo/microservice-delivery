@@ -5,7 +5,5 @@ var router = express.Router()
 const OrderController = require('../controllers/OrderController')
 
 router.get('/list', OrderController.list)
-router.post('/insert', OrderController.insert)
-
 
 module.exports = router
