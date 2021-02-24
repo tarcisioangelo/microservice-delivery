@@ -28,10 +28,11 @@ class ServiceOrder {
         }
     }
 
-    async update(data) {
+    async updateStatus(id, st_order) {
         try {
             const sqlTbOrder = 'update tb_order set st_order = ? where id_order = ?'
-            const values = [data.st_order, data.id]
+
+            const values = [st_order, id]
 
             const conn = await db.connection()
 

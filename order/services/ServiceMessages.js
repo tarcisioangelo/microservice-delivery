@@ -17,12 +17,14 @@ class ServiceMessages {
                         if (message.content) {
                             const data = (JSON.parse(message.content.toString()))
 
+                            data.st_order = 'A'
+
                             const id = await ServiceOrder.save(data)
-                            const st_order = 'A'
+                            data.id = id
 
                             resolve(message, true)
 
-                            queue.sendToQueue('payment', { id, st_order })
+                            queue.sendToQueue('payment', data)
                         }
                     } catch (error) {
                         reject(message)
@@ -44,15 +46,17 @@ class ServiceMessages {
                         if (message.content) {
                             const data = (JSON.parse(message.content.toString()))
 
-                            if (data.st_order === 'P') {
+                            // Processei todo o pagamento e gerou um ID
+                            const id_payment = 123456
 
-                                const id = ServiceOrder.update(data)
-
-                                resolve(message, id)
-
-                                queue.sendToQueue('payment_return', { id })
-
+                            const dataPayment = {
+                                id_order: data.id,
+                                id_payment
                             }
+
+                            resolve(message)
+
+                            queue.sendToQueue('payment_return', dataPayment)
 
                             resolve(message)
                         }
@@ -76,8 +80,13 @@ class ServiceMessages {
                         if (message.content) {
                             const data = (JSON.parse(message.content.toString()))
 
-                            //Insert na tabela delivery
-                            //Disparar Email
+                            if (data.id_payment) {
+
+                                await ServiceOrder.updateStatus(data.id_order, 'P')
+
+                                //Insert na tabela delivery
+                                //Disparar Email
+                            }
 
                             resolve(message, data)
                         }
@@ -88,6 +97,14 @@ class ServiceMessages {
                 })
             })
 
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async emitLog(message) {
+        try {
+            queue.sendToQueue('logs', message)
         } catch (error) {
             console.error(error)
         }
