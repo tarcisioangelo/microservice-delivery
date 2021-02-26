@@ -12,6 +12,6 @@ const routes = require('./routes')
 
 app.use(routes)
 
-require('./services/ServiceMessages').init()
+require('./services/ServiceMessages')
 
 app.listen(4000, () => console.log("Server Order on-line"))

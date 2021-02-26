@@ -30,6 +30,6 @@
   "devDependencies": {},
   "autoload": {
     "App": "./app",
-    "@autoclubesLibs": "./app/Libs"
+    "@deliveryLibs": "./app/Libs"
   }
 }

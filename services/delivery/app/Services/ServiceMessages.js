@@ -1,5 +1,3 @@
-const ServiceLocations = require("./ServiceLocations")
-
 const amqp = use('amqplib')
 
 const Env = use('Env')
@@ -9,10 +7,10 @@ const AMQP_URL = Env.get('AMQP_URL')
 const Ws = use('Ws')
 
 // Messages
-const { Delivery } = use('@autoclubesLibs/messages')
+const { Delivery } = use('@deliveryLibs/messages')
 
 // Services
-const ServiceUser = use('App/Services/ServiceUser')
+const ServiceLocations = require("./ServiceLocations")
 
 class ServiceMessages {
 
@@ -28,8 +26,7 @@ class ServiceMessages {
             await this.getChannel()
             console.log('AMQP Connected')
 
-            // Log.consumer(this.channel, this.consumerLog)
-            this.emitDelivery()
+            // this.emitDelivery()
             Delivery.consumer(this.channel, this.consumerDelivery)
 
         } catch (error) {
@@ -78,7 +75,6 @@ class ServiceMessages {
         }
     }
 
-
     async consumerDelivery(message) {
         return new Promise(async (resolve, reject) => {
             try {
@@ -88,11 +84,13 @@ class ServiceMessages {
 
                 console.log(`Enviando para ${location.address}`)
 
-                // location.points.map(point => {
-                //     setTimeout(() => {
-                //         console.log(point)
-                //     }, 1000)
-                // })
+                var waitingTime = 2000;
+
+                location.points.forEach((point, i) => {
+                    setTimeout(() => {
+                        console.log('Motoboy...', point)
+                    }, waitingTime*(i+1))
+                })
 
                 resolve()
             } catch (error) {
@@ -100,23 +98,6 @@ class ServiceMessages {
                 reject()
             }
         })
-    }
-
-    async sendMessageWS(point) {
-        try {
-
-            setTimeout(() => {
-                console.log(point)
-            }, 1000)
-
-            // const channel = Ws.getChannel('admin:*').topic(`admin:${topic}`)
-
-            // if (channel) {
-            //     channel.broadcastToAll('message', data)
-            // }
-        } catch (error) {
-            console.error(error.message)
-        }
     }
 
 }

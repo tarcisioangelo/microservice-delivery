@@ -3,7 +3,12 @@ const ServiceOrder = require('./ServiceOrder')
 
 class ServiceMessages {
 
+    constructor(){
+        this.init()
+    }
+    
     init() {
+        console.log('Oi')
         this.consumerOrder()
         this.consumerPaymentReturn()
     }

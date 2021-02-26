@@ -1,6 +1,6 @@
 'use strict'
 
-const Logger = use('@autoclubesLibs/log')
+const Logger = use('@deliveryLibs/log')
 
 const db = use('App/Models/User')
 

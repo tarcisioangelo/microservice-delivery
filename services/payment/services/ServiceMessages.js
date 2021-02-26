@@ -3,6 +3,10 @@ const ServicePayment = require('./ServicePayment')
 
 class ServiceMessages {
 
+    constructor(){
+        this.init()
+    }
+    
     init() {
         this.consumerPayment()
     }
