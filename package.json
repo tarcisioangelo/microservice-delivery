@@ -8,6 +8,7 @@
       "dev:off": "cd docker && docker-compose down",
       "order": "cd services/order && yarn dev",
       "payment": "cd services/payment && yarn dev",
+      "delivery": "cd services/delivery && yarn dev",
       "start": "concurrently --kill-others-on-fail 'yarn order' 'yarn payment'"
     },
     "dependencies": {
