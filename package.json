@@ -4,8 +4,8 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-      "dev:on": "cd docker && docker-compose up -d",
-      "dev:off": "cd docker && docker-compose down",
+      "dev:on": "docker-compose up -d",
+      "dev:off": "docker-compose down",
       "order": "cd services/order && yarn dev",
       "payment": "cd services/payment && yarn dev",
       "delivery": "cd services/delivery && yarn dev",
