@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:4003
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ3OTQ2NTYsInVzZXIiOjF9.xmzSnIFfnsaWOTdnnwRabM33zYLELxeSKXEV9LnLYJg
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ4MDAyMTksInVzZXIiOjF9.ZeiWzApnYstKsV9_Qn1UW3msBVErFsaajjoPgCqkilU
 
 
 ### Cadastro 
