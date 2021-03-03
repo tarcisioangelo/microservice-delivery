@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:4003
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ3OTQ2NTYsInVzZXIiOjF9.xmzSnIFfnsaWOTdnnwRabM33zYLELxeSKXEV9LnLYJg
+
+
+### Cadastro 
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{ 
+	"name": "Tarcisio", 
+	"email": "tarcisio.angelo@gmail.com",
+    "password": "123456" 
+}
+
+
+### Login 
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{ 
+	"email": "tarcisio.angelo@gmail.com", 
+    "password": "123456" 
+}
+
+
+### Listar
+GET {{baseUrl}}/user
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Atualizar 
+PUT {{baseUrl}}/user
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{ 
+	"name": "Tarcisio Angelo da Silva"
+}
+
+
+### Find
+GET {{baseUrl}}//user/1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
