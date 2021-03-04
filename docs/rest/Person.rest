@@ -1,5 +1,5 @@
-@baseUrl = http://localhost:4003
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ4MDAyMTksInVzZXIiOjF9.ZeiWzApnYstKsV9_Qn1UW3msBVErFsaajjoPgCqkilU
+@baseUrl = http://localhost:4001
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ4NzIyOTgsInVzZXIiOjF9.hmb3JygVfxYW0HbtrL1xdcUZBbbnjTuLbQz42sZGDzY
 
 
 ### Cadastro 
@@ -40,7 +40,13 @@ Authorization: Bearer {{accessToken}}
 
 
 ### Find
-GET {{baseUrl}}//user/1
+GET {{baseUrl}}/user/1
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### My Delete
+DELETE {{baseUrl}}/user
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 

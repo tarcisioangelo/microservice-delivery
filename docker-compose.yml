@@ -50,9 +50,9 @@ services:
 
   srv-person:
     container_name: "Person"
-    build: ./services/person
+    build: ./services/01_person
     ports:
-      - 4003:4003
+      - 4001:4001
     networks: 
       default:
         ipv4_address: 10.0.0.5

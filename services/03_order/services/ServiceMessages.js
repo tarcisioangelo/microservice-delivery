@@ -8,7 +8,6 @@ class ServiceMessages {
     }
     
     init() {
-        console.log('Oi')
         this.consumerOrder()
         this.consumerPaymentReturn()
     }

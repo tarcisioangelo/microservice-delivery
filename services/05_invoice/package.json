@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "email:on": "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "amqplib": "^0.7.0",

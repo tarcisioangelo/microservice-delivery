@@ -6,9 +6,12 @@
     "scripts": {
       "dev:on": "docker-compose up -d",
       "dev:off": "docker-compose down",
-      "order": "cd services/order && yarn dev",
-      "payment": "cd services/payment && yarn dev",
-      "delivery": "cd services/delivery && yarn dev",
+      "person": "cd services/01_person",
+      "products": "cd services/02_products && yarn dev",
+      "order": "cd services/03_order && yarn dev",
+      "payment": "cd services/04_payment && yarn dev",
+      "invoice": "cd services/05_invoice && yarn dev",
+      "delivery": "cd services/06_delivery && yarn dev",
       "start": "concurrently --kill-others-on-fail 'yarn order' 'yarn payment'"
     },
     "dependencies": {
