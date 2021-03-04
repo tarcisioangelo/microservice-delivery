@@ -1,0 +1,18 @@
+{
+  "name": "email",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "email:on": "nodemon server.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.7.0",
+    "body-parser": "^1.19.0",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
