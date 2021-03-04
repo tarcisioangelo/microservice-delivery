@@ -1,9 +1,9 @@
 @baseUrl = http://localhost:4001
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ4NzIyOTgsInVzZXIiOjF9.hmb3JygVfxYW0HbtrL1xdcUZBbbnjTuLbQz42sZGDzY
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2MTQ4NzgyOTcsInVzZXIiOjF9.ZVg5jCRNnfDUV8sDK6emjr1lc-nIe2vyhSipeuGiiqw
 
 
 ### Cadastro 
-POST {{baseUrl}}/user
+POST {{baseUrl}}/person/user
 Content-Type: application/json
 
 { 
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 
 ### Login 
-POST {{baseUrl}}/login
+POST {{baseUrl}}/person/login
 Content-Type: application/json
 
 { 
@@ -24,13 +24,13 @@ Content-Type: application/json
 
 
 ### Listar
-GET {{baseUrl}}/user
+GET {{baseUrl}}/person/user
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 
 ### Atualizar 
-PUT {{baseUrl}}/user
+PUT {{baseUrl}}/person/user
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
@@ -40,13 +40,13 @@ Authorization: Bearer {{accessToken}}
 
 
 ### Find
-GET {{baseUrl}}/user/1
+GET {{baseUrl}}/person/user/1
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 
 ### My Delete
-DELETE {{baseUrl}}/user
+DELETE {{baseUrl}}/person/user
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
